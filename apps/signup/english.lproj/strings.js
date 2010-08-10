@@ -25,5 +25,6 @@ SC.stringsFor('English', {
   "_Send me an email about important news and new features": "Send me an email about important news and new features",
   "_OK": "OK",
   "_Logout": "Logout",
-  "_Cancel": "Cancel"
+  "_Cancel": "Cancel",
+  "_Save": "Save"
 }) ;

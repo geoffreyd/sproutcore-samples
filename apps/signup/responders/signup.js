@@ -17,7 +17,7 @@ Signup.SIGNUP = SC.Responder.create({
     
     // Create a new user and set it as the root of the signup controller
     // so that we can edit it.
-    var store = this._store = Signup.store.chain() ; // buffer changes
+    var store = this._store = Signup.store.chain({lockOnRead: NO}) ; // buffer changes
     var user  = store.createRecord(Signup.User, {});
     Signup.signupController.set('content', user); // for editing
     
@@ -50,6 +50,14 @@ Signup.SIGNUP = SC.Responder.create({
     Signup.currentAccountController.set('content', user);
     
     Signup.makeFirstResponder(Signup.READY);
+  },
+  
+  save: function() {
+    this._store.commitChanges();
+    
+    // Set user as global, but don't exit
+    var user = Signup.store.find(Signup.signupController);
+    Signup.currentAccountController.set('content', user);
   },
   
   // called when the Cancel button is pressed

@@ -18,7 +18,7 @@ Signup.signupPage = SC.Page.design({
     // the entire pane content.s
     contentView: SC.View.design({
       
-      childViews: "prompt okButton cancelButton nameLabel firstName lastName emailLabel email mailingListCheckbox sexLabel sex".w(),
+      childViews: "prompt okButton cancelButton saveButton nameLabel firstName lastName emailLabel email mailingListCheckbox sexLabel sex".w(),
       
       // PROMPT
       prompt: SC.LabelView.design({
@@ -80,7 +80,6 @@ Signup.signupPage = SC.Page.design({
       okButton: SC.ButtonView.design({
         layout: { bottom: 20, right: 20, width: 90, height: 24 },
         title: "_OK".loc(),
-        isDefault: YES,
         action: "submit"
       }),
       
@@ -89,6 +88,13 @@ Signup.signupPage = SC.Page.design({
         title: "_Cancel".loc(),
         isCancel: YES,
         action: "cancel"
+      }),
+      
+      saveButton: SC.ButtonView.design({
+        layout: {bottom: 20, left: 60, width: 90, height: 24},
+        title: "_Save".loc(),
+        isDefault: YES,
+        action: 'save'
       })
       
     })

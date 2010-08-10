@@ -23,6 +23,7 @@ Signup = SC.Application.create(
   // turn on logging for action notifications
   //trace: YES,
   
-  store: SC.Store.create().from(SC.Record.fixtures)
+  // store: SC.Store.create().from(SC.Record.fixtures)
+  store: SC.Store.create().from('Signup.Delayed')
 
 }) ;
